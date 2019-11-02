@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="KDK_func.c">
+    <ClCompile Include="KDK_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="KDK_Iplib.c">
+    <ClCompile Include="KDK_Iplib.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="KDK_main.c">
+    <ClCompile Include="KDK_func.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

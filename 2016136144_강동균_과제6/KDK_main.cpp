@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "iplib.h"
-#include "point.h"
+#include "KDK_iplib.h"
+#include "KDK_point.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,9 +16,9 @@ int main(int argc, char *argv[])
 	float scale;
 	int val, thr;
 	unsigned char *mask;
-
+	
     /* set input filename and output file name */
-    if(argc == 3)
+    /*if(argc == 3)
 	{
 		strcpy(filein, argv[1]);
 		strcpy(fileout, argv[2]);
@@ -30,10 +30,11 @@ int main(int argc, char *argv[])
 		printf("\nInput name of output file\n");
 		gets(fileout);
 		printf("\n");
-	}
+	}*/
 
-    buffer = read_pnm(filein, &rows, &cols, &type);
-
+	buffer = read_pnm("lena512gray_Gnoise.pgm", &cols, &rows, &type);
+	//buffer = read_pnm("lab1_im.pgm", &cols, &rows, &type);
+	strcpy(fileout, "output.pgm");
     /* determine bytes_per_pixel, 3 for color, 1 for gray-scale */
     
 	if(type == PPM)
@@ -44,13 +45,12 @@ int main(int argc, char *argv[])
     number_of_pixels = bytes_per_pixel * rows * cols;
 	
 	dst = (unsigned char*)malloc(number_of_pixels);
+	memset(dst, 0, number_of_pixels);
 	
-	segmentation_by_thresholding(buffer, dst, number_of_pixels, cols, rows);
+	//gaussianSmoothing(buffer, dst, number_of_pixels, cols, rows, 0.7);
+	gaussianSmoothing(buffer, dst, number_of_pixels, cols, rows, 1);
 
-	// histogram_equalize(buffer, dst, number_of_pixels);
-
-	// auto_contrast_stretch(buffer, dst, number_of_pixels, 10.0, 10.0);
-	write_pnm(dst, fileout, rows, cols, type);
+	write_pnm(dst, fileout, cols, rows, type);
 	
 	free(buffer);
 	free(dst);

@@ -1,7 +1,7 @@
 #include <malloc.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "iplib.h"
+#include "KDK_iplib.h"
 
 unsigned char *read_pnm(char *filename, int *rows, int *cols, int *type);
 int getnum(FILE *fp);

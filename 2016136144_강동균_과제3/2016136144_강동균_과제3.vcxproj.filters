@@ -15,22 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="KDK_func.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="KDK_Iplib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="KDK_main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="KDK_iplib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="KDK_point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KDK_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KDK_Iplib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KDK_func.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

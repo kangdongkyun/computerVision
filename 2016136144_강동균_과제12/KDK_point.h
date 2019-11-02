@@ -1,0 +1,1 @@
+void ransac(unsigned char *source, int cols, int rows, int threshold);
